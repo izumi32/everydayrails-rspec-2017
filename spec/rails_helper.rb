@@ -6,8 +6,11 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+<<<<<<< HEAD
 require 'capybara/rspec'
 require 'paperclip/matchers'
+=======
+>>>>>>> my-02-setup
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -22,7 +25,11 @@ require 'paperclip/matchers'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
+<<<<<<< HEAD
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+=======
+# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+>>>>>>> my-02-setup
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -56,6 +63,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+<<<<<<< HEAD
 
   # Use Devise helpers in tests
   config.include Devise::Test::ControllerHelpers, type: :controller
@@ -76,4 +84,6 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+=======
+>>>>>>> my-02-setup
 end

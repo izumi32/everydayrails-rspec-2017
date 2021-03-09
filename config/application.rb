@@ -17,9 +17,16 @@ module Projects
 
     config.generators do |g|
       g.test_framework :rspec,
+<<<<<<< HEAD
         view_specs: false,
         helper_specs: false,
         routing_specs: false
+=======
+      fixtures: false,
+      view_specs: false,
+      helper_specs: false,
+      routing_specs: false
+>>>>>>> my-02-setup
     end
   end
 end
