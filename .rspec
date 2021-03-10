@@ -1,6 +1,10 @@
 --require spec_helper
 --format documentation
 <<<<<<< HEAD
+<<<<<<< HEAD
 --warnings
 =======
 >>>>>>> my-02-setup
+=======
+- --warnings
+>>>>>>> my-03-models
