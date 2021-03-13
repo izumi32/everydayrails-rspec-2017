@@ -7,14 +7,9 @@ RSpec.describe Note, type: :model do
     puts "This note's project is #{note.project.inspect}"
     puts "This note's user is #{note.user.inspect}"
   end
-  
+
   before do
-    @user = User.create(
-      first_name: "Joe",
-      last_name:  "Tester",
-      email:      "joetester@example.com",
-      password:   "dottle-nouveau-pavilion-tights-furze",
-    )
+    @user = FactoryBot.create(:user)
 
     @project = @user.projects.create(
       name: "Test Project",
@@ -22,11 +17,7 @@ RSpec.describe Note, type: :model do
   end
 
   it "is valid with a user, project, and message" do
-    note = Note.new(
-      message: "This is a sample note.",
-      user: @user,
-      project: @project,
-    )
+    note = FactoryBot.build(:note, user: @user, project: @project)
     expect(note).to be_valid
   end
 
