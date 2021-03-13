@@ -3,9 +3,12 @@ FactoryBot.define do
     message "My important note."
     association :project
     user { project.owner }
+<<<<<<< HEAD
 
     trait :with_attachment do
       attachment { File.new("#{Rails.root}/spec/files/attachment.jpg") }
     end
+=======
+>>>>>>> my-04-factories
   end
 end

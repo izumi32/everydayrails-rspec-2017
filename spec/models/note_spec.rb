@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Note, type: :model do
 <<<<<<< HEAD
+<<<<<<< HEAD
   let(:user) { FactoryBot.create(:user) }
   let(:project) { FactoryBot.create(:project, owner: user) }
 
@@ -19,6 +20,17 @@ RSpec.describe Note, type: :model do
       email: "joetester@example.com",
       password: "dottle-nouveau-pavilion-tights-furze"
     )
+=======
+
+  it "generates associated data from factory" do
+    note = FactoryBot.create(:note)
+    puts "This note's project is #{note.project.inspect}"
+    puts "This note's user is #{note.user.inspect}"
+  end
+
+  before do
+    @user = FactoryBot.create(:user)
+>>>>>>> my-04-factories
 
     @project = @user.projects.create(
       name: "Test Project"
@@ -26,12 +38,16 @@ RSpec.describe Note, type: :model do
   end
 
   it "is valid with a user, project, and message" do
+<<<<<<< HEAD
     note = Note.new(
       message: "This is sample note.",
       user: @user,
       project: @project
 >>>>>>> my-03-models
     )
+=======
+    note = FactoryBot.build(:note, user: @user, project: @project)
+>>>>>>> my-04-factories
     expect(note).to be_valid
   end
 

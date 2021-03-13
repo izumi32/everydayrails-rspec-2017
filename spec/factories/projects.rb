@@ -1,7 +1,12 @@
 FactoryBot.define do
   factory :project do
+<<<<<<< HEAD
     sequence(:name) { |n| "Project #{n}" }
     description "A test project."
+=======
+    sequence(:name) { |n| "Test Project #{n}" }
+    description "Sample project for testing purposes"
+>>>>>>> my-04-factories
     due_on 1.week.from_now
     association :owner
 
@@ -21,6 +26,7 @@ FactoryBot.define do
       due_on 1.day.from_now
     end
 
+<<<<<<< HEAD
     trait :invalid do
       name nil
     end
@@ -62,4 +68,7 @@ FactoryBot.define do
   #   due_on 1.day.from_now
   #   association :owner
   # end
+=======
+  end
+>>>>>>> my-04-factories
 end

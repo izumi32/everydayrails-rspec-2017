@@ -18,6 +18,9 @@ module Projects
     config.generators do |g|
       g.test_framework :rspec,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> my-04-factories
         view_specs: false,
         helper_specs: false,
         routing_specs: false
