@@ -1,8 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
+<<<<<<< HEAD
   describe "#index" do
     context "as an authenticated user" do
+=======
+
+  describe "#index" do
+
+    context "as an authenticated user" do
+
+>>>>>>> my-05-controllers
       before do
         @user = FactoryBot.create(:user)
       end
@@ -10,15 +18,30 @@ RSpec.describe ProjectsController, type: :controller do
       it "responds successfully" do
         sign_in @user
         get :index
+<<<<<<< HEAD
         aggregate_failures do
           expect(response).to be_success
           expect(response).to have_http_status "200"
         end
+=======
+        expect(response).to be_success
+      end
+
+      it "returns 200 response" do
+        sign_in @user
+        get :index
+        expect(response).to have_http_status "200"
+>>>>>>> my-05-controllers
       end
     end
 
     context "as a guest" do
+<<<<<<< HEAD
       it "returns a 302 response" do
+=======
+
+      it "returns 302 response" do
+>>>>>>> my-05-controllers
         get :index
         expect(response).to have_http_status "302"
       end
@@ -31,7 +54,13 @@ RSpec.describe ProjectsController, type: :controller do
   end
 
   describe "#show" do
+<<<<<<< HEAD
     context "as an authorized user" do
+=======
+
+    context "as an authorized user" do
+
+>>>>>>> my-05-controllers
       before do
         @user = FactoryBot.create(:user)
         @project = FactoryBot.create(:project, owner: @user)
@@ -45,6 +74,10 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     context "as an unauthorized user" do
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-05-controllers
       before do
         @user = FactoryBot.create(:user)
         other_user = FactoryBot.create(:user)
@@ -60,12 +93,22 @@ RSpec.describe ProjectsController, type: :controller do
   end
 
   describe "#create" do
+<<<<<<< HEAD
     context "as an authenticated user" do
+=======
+
+    context "as an authorized user" do
+
+>>>>>>> my-05-controllers
       before do
         @user = FactoryBot.create(:user)
       end
 
       context "with valid attributes" do
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-05-controllers
         it "adds a project" do
           project_params = FactoryBot.attributes_for(:project)
           sign_in @user
@@ -76,6 +119,10 @@ RSpec.describe ProjectsController, type: :controller do
       end
 
       context "with invalid attributes" do
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-05-controllers
         it "does not add a project" do
           project_params = FactoryBot.attributes_for(:project, :invalid)
           sign_in @user
@@ -87,13 +134,21 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     context "as a guest" do
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-05-controllers
       it "returns a 302 response" do
         project_params = FactoryBot.attributes_for(:project)
         post :create, params: { project: project_params }
         expect(response).to have_http_status "302"
       end
 
+<<<<<<< HEAD
       it "redirects to the sign-in page" do
+=======
+      it "redirects to sign-in page" do
+>>>>>>> my-05-controllers
         project_params = FactoryBot.attributes_for(:project)
         post :create, params: { project: project_params }
         expect(response).to redirect_to "/users/sign_in"
@@ -102,15 +157,25 @@ RSpec.describe ProjectsController, type: :controller do
   end
 
   describe "#update" do
+<<<<<<< HEAD
     context "as an authorized user" do
+=======
+
+    context "as an authorized user" do
+
+>>>>>>> my-05-controllers
       before do
         @user = FactoryBot.create(:user)
         @project = FactoryBot.create(:project, owner: @user)
       end
 
       it "updates a project" do
+<<<<<<< HEAD
         project_params = FactoryBot.attributes_for(:project,
           name: "New Project Name")
+=======
+        project_params = FactoryBot.attributes_for(:project, name: "New Project Name")
+>>>>>>> my-05-controllers
         sign_in @user
         patch :update, params: { id: @project.id, project: project_params }
         expect(@project.reload.name).to eq "New Project Name"
@@ -118,6 +183,7 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     context "as an unauthorized user" do
+<<<<<<< HEAD
       before do
         @user = FactoryBot.create(:user)
         other_user = FactoryBot.create(:user)
@@ -129,12 +195,27 @@ RSpec.describe ProjectsController, type: :controller do
       it "does not update the project" do
         project_params = FactoryBot.attributes_for(:project,
           name: "New Name")
+=======
+
+      before do
+        @user = FactoryBot.create(:user)
+        other_user = FactoryBot.create(:user)
+        @project = FactoryBot.create(:project, owner: other_user, name: "Same Old Name")
+      end
+
+      it "does not update the project" do
+        project_params = FactoryBot.attributes_for(:project, name: "New Name")
+>>>>>>> my-05-controllers
         sign_in @user
         patch :update, params: { id: @project.id, project: project_params }
         expect(@project.reload.name).to eq "Same Old Name"
       end
 
+<<<<<<< HEAD
       it "redirects to the dashboard" do
+=======
+      it "redirects to dashboard" do
+>>>>>>> my-05-controllers
         project_params = FactoryBot.attributes_for(:project)
         sign_in @user
         patch :update, params: { id: @project.id, project: project_params }
@@ -143,6 +224,10 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     context "as a guest" do
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-05-controllers
       before do
         @project = FactoryBot.create(:project)
       end
@@ -162,7 +247,13 @@ RSpec.describe ProjectsController, type: :controller do
   end
 
   describe "#destroy" do
+<<<<<<< HEAD
     context "as an authorized user" do
+=======
+
+    context "as an authorized user" do
+
+>>>>>>> my-05-controllers
       before do
         @user = FactoryBot.create(:user)
         @project = FactoryBot.create(:project, owner: @user)
@@ -177,17 +268,29 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     context "as an unauthorized user" do
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-05-controllers
       before do
         @user = FactoryBot.create(:user)
         other_user = FactoryBot.create(:user)
         @project = FactoryBot.create(:project, owner: other_user)
       end
 
+<<<<<<< HEAD
       it "does not delete the project" do
         sign_in @user
         expect {
           delete :destroy, params: { id: @project.id }
         }.to_not change(Project, :count)
+=======
+      it "does not delete a project" do
+        sign_in @user
+        expect{
+          delete :destroy, params: { id: @project.id }
+        }.to_not change(@user.projects, :count)
+>>>>>>> my-05-controllers
       end
 
       it "redirects to the dashboard" do
@@ -198,6 +301,10 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     context "as a guest" do
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-05-controllers
       before do
         @project = FactoryBot.create(:project)
       end
@@ -207,18 +314,28 @@ RSpec.describe ProjectsController, type: :controller do
         expect(response).to have_http_status "302"
       end
 
+<<<<<<< HEAD
       it "redirects to the sign-in page" do
+=======
+      it "redirects to sign-in page" do
+>>>>>>> my-05-controllers
         delete :destroy, params: { id: @project.id }
         expect(response).to redirect_to "/users/sign_in"
       end
 
+<<<<<<< HEAD
       it "does not delete the project" do
         expect {
+=======
+      it "does not delete a the project" do
+        expect{
+>>>>>>> my-05-controllers
           delete :destroy, params: { id: @project.id }
         }.to_not change(Project, :count)
       end
     end
   end
+<<<<<<< HEAD
 
   describe "#complete" do
     context "as an authenticated user" do
@@ -254,4 +371,6 @@ RSpec.describe ProjectsController, type: :controller do
       end
     end
   end
+=======
+>>>>>>> my-05-controllers
 end

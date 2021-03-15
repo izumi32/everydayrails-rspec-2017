@@ -27,6 +27,7 @@ FactoryBot.define do
     end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     trait :invalid do
       name nil
     end
@@ -71,4 +72,11 @@ FactoryBot.define do
 =======
   end
 >>>>>>> my-04-factories
+=======
+    trait :invalid do
+      name nil
+    end
+
+  end
+>>>>>>> my-05-controllers
 end
