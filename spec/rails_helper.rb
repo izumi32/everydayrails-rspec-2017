@@ -77,6 +77,7 @@ RSpec.configure do |config|
   # Use Devise helpers in tests
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include RequestSpecHelper, type: :request
+<<<<<<< HEAD
   config.include Devise::Test::IntegrationHelpers, type: :system
 
   # Add support for Paperclip's Shoulda matchers
@@ -95,4 +96,6 @@ Shoulda::Matchers.configure do |config|
   end
 =======
 >>>>>>> my-02-setup
+=======
+>>>>>>> my-07-requests
 end
