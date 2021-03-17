@@ -19,10 +19,14 @@ RSpec.describe ProjectsController, type: :controller do
         sign_in @user
         get :index
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> my-08-dry-specs
         aggregate_failures do
           expect(response).to be_success
           expect(response).to have_http_status "200"
         end
+<<<<<<< HEAD
 =======
         expect(response).to be_success
       end
@@ -32,6 +36,8 @@ RSpec.describe ProjectsController, type: :controller do
         get :index
         expect(response).to have_http_status "200"
 >>>>>>> my-05-controllers
+=======
+>>>>>>> my-08-dry-specs
       end
     end
 

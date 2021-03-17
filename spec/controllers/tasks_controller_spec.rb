@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
 <<<<<<< HEAD
+<<<<<<< HEAD
   include_context "project setup"
 
   describe "#show" do
@@ -17,14 +18,24 @@ RSpec.describe TasksController, type: :controller do
     @project = FactoryBot.create(:project, owner: @user)
     @task = @project.tasks.create!(name: "Test task")
   end
+=======
+  include_context "project setup"
+>>>>>>> my-08-dry-specs
 
   describe "#show" do
 
     it "responds with JSON formatted output" do
+<<<<<<< HEAD
       sign_in @user
       get :show, format: :json, params: { project_id: @project.id, id: @task.id }
       expect(response.content_type).to eq "application/json"
 >>>>>>> my-05-controllers
+=======
+      sign_in user
+      get :show, format: :json,
+        params: { project_id: project.id, id: task.id }
+      expect(response).to have_content_type :json
+>>>>>>> my-08-dry-specs
     end
   end
 
@@ -54,6 +65,7 @@ RSpec.describe TasksController, type: :controller do
         post :create, format: :json,
           params: { project_id: project.id, task: new_task }
       }.to_not change(project.tasks, :count)
+<<<<<<< HEAD
 =======
 
     it "responds with JSON formatted output" do
@@ -77,6 +89,8 @@ RSpec.describe TasksController, type: :controller do
         post :create, format: :json, params: { project_id: @project.id, task: new_task }
       }.to_not change(@project.tasks, :count)
 >>>>>>> my-05-controllers
+=======
+>>>>>>> my-08-dry-specs
       expect(response).to_not be_success
     end
   end

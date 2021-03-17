@@ -1,4 +1,8 @@
 module LoginSupport
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-08-dry-specs
   def sign_in_as(user)
     visit root_path
     click_link "Sign in"
