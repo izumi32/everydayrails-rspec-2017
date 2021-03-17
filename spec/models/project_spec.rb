@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Project, type: :model do
 <<<<<<< HEAD
+<<<<<<< HEAD
   it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }
 
   describe "late status" do
@@ -80,6 +81,10 @@ RSpec.describe Project, type: :model do
     expect(other_project).to be_valid
 >>>>>>> my-03-models
   end
+=======
+
+  it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }
+>>>>>>> my-09-test-faster
 
   describe "late status" do
 

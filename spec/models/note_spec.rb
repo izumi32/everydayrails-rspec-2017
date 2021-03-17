@@ -121,6 +121,7 @@ RSpec.describe Note, type: :model do
     allow(note).to receive(:user).and_return(user)
     expect(note.user_name).to eq "Fake User"
   end
+<<<<<<< HEAD
 =======
   describe "search message for a term" do
 <<<<<<< HEAD
@@ -181,4 +182,6 @@ RSpec.describe Note, type: :model do
     end
   end
 >>>>>>> my-03-models
+=======
+>>>>>>> my-09-test-faster
 end
