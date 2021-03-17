@@ -7,10 +7,14 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 <<<<<<< HEAD
+<<<<<<< HEAD
 require 'capybara/rspec'
 require 'paperclip/matchers'
 =======
 >>>>>>> my-02-setup
+=======
+require 'capybara/rspec'
+>>>>>>> my-06-features
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -26,10 +30,14 @@ require 'paperclip/matchers'
 # require only the support files necessary.
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 =======
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 >>>>>>> my-02-setup
+=======
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+>>>>>>> my-06-features
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.

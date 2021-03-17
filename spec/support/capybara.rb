@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by :rack_test
@@ -7,3 +8,6 @@ RSpec.configure do |config|
     driven_by :selenium_chrome_headless
   end
 end
+=======
+Capybara.javascript_driver = :selenium_chrome_headless
+>>>>>>> my-06-features
