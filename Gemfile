@@ -57,12 +57,17 @@ group :test do
     git: 'https://github.com/thoughtbot/shoulda-matchers.git',
     branch: 'rails-5'
 <<<<<<< HEAD
+<<<<<<< HEAD
   gem 'vcr'
   gem 'webmock'
 =======
 >>>>>>> my-02-setup
 =======
 >>>>>>> my-09-test-faster
+=======
+  gem 'vcr'
+  gem 'webmock'
+>>>>>>> my-10-testing-the-rest
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

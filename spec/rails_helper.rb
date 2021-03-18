@@ -9,12 +9,16 @@ require 'rspec/rails'
 <<<<<<< HEAD
 <<<<<<< HEAD
 require 'capybara/rspec'
+<<<<<<< HEAD
 require 'paperclip/matchers'
 =======
 >>>>>>> my-02-setup
 =======
 require 'capybara/rspec'
 >>>>>>> my-06-features
+=======
+require "paperclip/matchers"
+>>>>>>> my-10-testing-the-rest
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -101,7 +105,14 @@ Shoulda::Matchers.configure do |config|
 >>>>>>> my-07-requests
 =======
   config.include Devise::Test::IntegrationHelpers, type: :feature
+<<<<<<< HEAD
 >>>>>>> my-08-dry-specs
+=======
+  config.after(:suite) do
+    FileUtils.rm_rf(Dir["#{Rails.root}/spec/test_uploads/"])
+  end
+  config.include Paperclip::Shoulda::Matchers
+>>>>>>> my-10-testing-the-rest
 end
 
 Shoulda::Matchers.configure do |config|
