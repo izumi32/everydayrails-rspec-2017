@@ -26,3 +26,8 @@
 /public/system
 
 .ruby-version
+
+/public/system
+/spec/test_uploads
+
+/spec/cassettes
