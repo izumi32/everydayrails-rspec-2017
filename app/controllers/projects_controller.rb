@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_project,
     only: [:show, :edit, :update, :destroy, :complete]
+=======
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :complete]
+>>>>>>> my-11-tdd
   before_action :project_owner?, except: [:index, :new, :create]
 
   # GET /projects
@@ -65,8 +69,12 @@ class ProjectsController < ApplicationController
 
   def complete
     if @project.update_attributes(completed: true)
+<<<<<<< HEAD
       redirect_to @project,
         notice: "Congratulations, this project is complete!"
+=======
+      redirect_to @project, notice: "Congratulations, this project is complete!"
+>>>>>>> my-11-tdd
     else
       redirect_to @project, alert: "Unable to complete project."
     end

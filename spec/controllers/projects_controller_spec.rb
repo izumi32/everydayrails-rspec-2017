@@ -342,6 +342,9 @@ RSpec.describe ProjectsController, type: :controller do
     end
   end
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> my-11-tdd
 
   describe "#complete" do
     context "as an authenticated user" do
@@ -353,10 +356,14 @@ RSpec.describe ProjectsController, type: :controller do
 
       describe "an unsuccessful completion" do
         before do
+<<<<<<< HEAD
           allow_any_instance_of(Project).
             to receive(:update_attributes).
             with(completed: true).
             and_return(false)
+=======
+          allow_any_instance_of(Project).to receive(:update_attributes).with(completed: true).and_return(false)
+>>>>>>> my-11-tdd
         end
 
         it "redirects to the project page" do
@@ -377,6 +384,9 @@ RSpec.describe ProjectsController, type: :controller do
       end
     end
   end
+<<<<<<< HEAD
 =======
 >>>>>>> my-05-controllers
+=======
+>>>>>>> my-11-tdd
 end
